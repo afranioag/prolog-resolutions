@@ -34,7 +34,7 @@ insereOrdenado(N, [], [N]).
 insereOrdenado(N,[H|T], L):- N < H, insere(N, [H|T], L).
 insereOrdenado(N, [H|T], L):- insereOrdenado(N, T, X), insere(H, X, L). 
 
-/*Remove uma ocorrencia do ele x passado*/
+/*Remove uma ocorrencia do elemento x passado, retorna false caso ele nao exista*/
 remove(X, [X|T], T).
 remove(X, [_|T], [_|T1]):- remove(X, T, T1).
 
