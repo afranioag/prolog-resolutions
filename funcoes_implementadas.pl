@@ -36,7 +36,11 @@ insereOrdenado(N, [H|T], L):- insereOrdenado(N, T, X), insere(H, X, L).
 
 /*Remove uma ocorrencia do elemento x passado, retorna false caso ele nao exista*/
 remove(X, [X|T], T).
-remove(X, [_|T], [_|T1]):- remove(X, T, T1).
+remove(X, [Z|T], [Z|T1]):- remove(X, T, T1).
+
+remove2(X, [X|T], T).
+remove2(X, [H|T], L) :- remove2(X, T, G), insere(H, G, L).
+
 
 /*retorna o menor elemento entre dois comparados */
 retornaMenor(X,Y,Z) :- X < Y, Z is X; Z is Y. 
@@ -62,3 +66,8 @@ fib(X, V):- Z is X - 1, H is X - 2, fib(Z, T), fib(H, S), V is T + S.
 fatorial(0, 1).
 fatorial(1, 1).
 fatorial(N, X) :- Z is N - 1, fatorial(Z, H), X is N * H.
+
+
+
+
+
