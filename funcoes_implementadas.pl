@@ -68,6 +68,6 @@ fatorial(1, 1).
 fatorial(N, X) :- Z is N - 1, fatorial(Z, H), X is N * H.
 
 
-
-
-
+/*retorna indice do elemento*/
+indexOf(X,[X|_], 0).
+indexOf(X, [_|T], G) :- indexOf(X, T, S), G is S + 1.
